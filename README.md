@@ -1,6 +1,6 @@
 # James Store
 
-An mock ecommerce platform built with React, Vite, and Tailwind CSS.
+An mock ecommerce platform built with React, Vite, and Tailwind-CSS for front-end and nodeJs(expressJS) and mongoDB for the backend. The frontend has been deployed with Vercel and Render for the backend.
 
 ## Table of Contents
 
