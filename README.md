@@ -16,9 +16,9 @@ An mock ecommerce platform built with React, Vite, and Tailwind-CSS for front-en
 
 ## Description
 
-This app is an online store offering a range of products with features like a shopping cart, view products by category, order summary and checkout.
+This app is an online store offering a range of products with features like a shopping cart, view products by category, cart persistence, order summary and checkout.
 
-This app consumes the fakestore API. Here is its [documentation](https://fakestoreapi.com/docs) and [GitHub Repo](https://github.com/keikaavousi/fake-store-api)
+This app consumes my own APIs made in NodeJS (express), and MongoDB (Atlas). The front end has been deployed on Vercel while backend has been deployed on Render.
 
 ## Installation
 
@@ -68,13 +68,17 @@ After starting the development server, you can access the app at `http://localho
 <img src="./public/checkout.png" alt="Checkout page" width="600">;
 
 ## Technologies
-
+### Frontend
 - React
 - Vite
 - Tailwind CSS
 - Axios
 - React Router
 - UseContext
+
+### Backend
+- NodeJS (express)
+- MongoDb (Atlas)
 
 ## Contributing
 
