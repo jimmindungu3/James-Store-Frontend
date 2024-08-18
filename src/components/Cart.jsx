@@ -111,13 +111,13 @@ const Cart = () => {
               </div>
               <button
                 onClick={emptyCart}
-                className="bg-red-500 text-white px-6 py-2 rounded font-bold text-lg hover:bg-red-400 transition duration-300"
+                className="bg-red-500 text-white px-2 py-2 rounded font-bold text-lg hover:bg-red-400 transition duration-300"
               >
                 Empty Cart
               </button>
               <Link to={"/checkout"}>
-                <button className="bg-teal-600 text-white px-6 py-2 rounded font-bold text-lg hover:bg-teal-500 transition duration-300">
-                  Proceed To Checkout
+                <button className="bg-teal-600 text-white px-2 py-2 rounded font-bold text-lg hover:bg-teal-500 transition duration-300">
+                  Checkout
                   <FaRegArrowAltCircleRight className="ml-2 inline-block" />
                 </button>
               </Link>

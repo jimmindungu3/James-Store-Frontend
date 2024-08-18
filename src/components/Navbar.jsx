@@ -104,54 +104,68 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       <div className={`${isOpen ? "block" : "hidden"} lg:hidden`}>
-        <ul className="flex flex-col items-center bg-gray-100 space-y-2 py-2">
-          <li>
-            <NavLink to="/" className="block px-4 py-2" onClick={toggleMenu}>
-              Shop
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/about"
-              className="block px-4 py-2"
-              onClick={toggleMenu}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              About
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/contact"
-              className="block px-4 py-2"
-              onClick={toggleMenu}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Contact
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/" className="block px-4 py-2" onClick={toggleMenu}>
-              Login
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/" className="block px-4 py-2" onClick={toggleMenu}>
-              Register
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/cart"
-              className="block px-4 py-2"
-              onClick={toggleMenu}
-            >
-              Cart
-            </NavLink>
-          </li>
-        </ul>
+        <div className="container mx-auto">
+          <ul className="flex flex-col text-right mr-4 bg-gray-100 space-y-2 py-2">
+            <li>
+              <NavLink
+                to="/"
+                className="block py-2 font-semibold"
+                onClick={toggleMenu}
+              >
+                Shop
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/about"
+                className="block py-2 font-semibold"
+                onClick={toggleMenu}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                About
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/contact"
+                className="block py-2 font-semibold"
+                onClick={toggleMenu}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Contact
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/"
+                className="inline-block btn bg-teal-700 rounded-md text-white font-semibold px-4 py-2 my-2"
+                onClick={toggleMenu}
+              >
+                Login
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/"
+                className="btn bg-gray-700 rounded-md text-white font-semibold px-4 py-2 my-2"
+                onClick={toggleMenu}
+              >
+                Register
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/cart"
+                className="inline-block btn text-lg text-center border font-semibold border-gray-700 rounded-md px-4 py-2 my-2"
+                onClick={toggleMenu}
+              >
+                Cart
+              </NavLink>
+            </li>
+          </ul>
+        </div>
       </div>
     </nav>
   );
