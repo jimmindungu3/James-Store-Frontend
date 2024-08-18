@@ -5,7 +5,7 @@ import { IoMdGlobe } from 'react-icons/io';
 
 const ContactPage = () => {
   return (
-    <div className="bg-gray-200 min-h-screen py-8">
+    <div className="bg-gray-200 min-h-screen flex items-center py-8">
       <div className="max-w-4xl mx-auto p-4 bg-white rounded-lg shadow-md">
         <h1 className="text-2xl font-bold mb-6">Contact Me</h1>
         <p className="text-lg mb-6">
@@ -16,7 +16,7 @@ const ContactPage = () => {
           <div className="flex items-center space-x-4">
             <IoMdGlobe className="text-teal-600 text-2xl" />
             <a
-              href="https://jimmindungu3.github.io/portfolio/"
+              href="https://portfolio-topaz-nu-61.vercel.app/"
               className="text-blue-600 hover:text-blue-500"
               target="_blank"
               rel="noopener noreferrer"
