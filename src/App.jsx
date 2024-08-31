@@ -7,23 +7,23 @@ import CheckoutPage from "./pages/Checkout.jsx";
 import NotFound from "./pages/NotFound.jsx";
 import AboutPage from "./pages/About.jsx";
 import ContactPage from "./pages/Contact.jsx";
-import { ToastContainer, toast } from 'react-toastify'
-import 'react-toastify/dist/ReactToastify.css'
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "./index.css";
 
 const App = () => {
-  // get cart from localstorage and initialize state to its content
+  // Initialize cart from local storage
   const [cart, setCart] = useState(() => {
     const storedCart = localStorage.getItem("myCart");
     return storedCart ? JSON.parse(storedCart) : [];
   });
 
-  // update localstorage when state changes
+  // Update localstorage when state changes
   useEffect(() => {
     window.localStorage.setItem("myCart", JSON.stringify(cart));
   }, [cart]);
 
-  // Function to add a product to the cart
+  // Add a product to the cart
   const addToCart = (product) => {
     setCart((prevCart) => {
       const existingProductIndex = prevCart.findIndex(
@@ -41,34 +41,37 @@ const App = () => {
         return [...prevCart, { ...product, num: 1 }];
       }
     });
-    toast.success(`${product.title} added to cart`)
+    toast.success(`${product.title} added to cart`);
   };
 
-  // Function to remove a product from the cart
+  // Remove a product from the cart
   const removeFromCart = (id) => {
-    setCart((prevCart) => prevCart.filter((product) => product.id !== id));
-    toast.error('Product(s) removed from cart')
+    setCart((prevCart) => {
+      const productToRemove = prevCart.find((product) => product.id === id);
+      toast.error(`${productToRemove.title} removed from cart`);
+      return prevCart.filter((product) => product.id !== id);
+    });
   };
 
-  // Function to decrement the quantity of a product in the cart
+  // Decrement the quantity of a product in the cart
   const decrementProduct = (id) => {
     setCart((prevCart) => {
       return prevCart
         .map((product) => {
           if (product.id === id && product.num > 1) {
+            toast.error(`1 ${product.title} removed from cart`);
             return { ...product, num: product.num - 1 };
           }
           return product;
         })
         .filter((product) => product.num > 0); // Remove product if quantity is zero
     });
-    toast.error('1 item removed')
   };
 
   // Function to empty the cart
   const emptyCart = () => {
     setCart([]);
-    toast.error('Cart emptied!')
+    toast.error("Cart emptied!");
   };
 
   return (
@@ -76,12 +79,12 @@ const App = () => {
       value={{ cart, addToCart, removeFromCart, decrementProduct, emptyCart }}
     >
       <RouterProvider router={router} />
-      <ToastContainer limit={4}/>
+      <ToastContainer limit={2} autoClose={1500} />
     </CartContext.Provider>
   );
 };
 
-// Define your routes here
+// Routes
 const router = createBrowserRouter([
   { path: "/", element: <Home /> },
   { path: "/cart", element: <CartPage /> },
