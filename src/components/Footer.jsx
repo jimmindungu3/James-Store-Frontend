@@ -35,7 +35,7 @@ const Footer = () => {
               Terms and Conditions
             </a>
             <div className="text-gray-700">
-              &copy; {new Date().getFullYear()} KenBuy254. All Rights Reserved.
+              &copy; {new Date().getFullYear()} James Store. All Rights Reserved.
             </div>
             <div className="text-gray-700 flex items-center">
               <a href="#" className="mr-4 hover:text-gray-400">
